@@ -98,6 +98,7 @@
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://www.R-project.org" class="external-link">bark</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span>
 <span><span class="va">traindata</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sim_Friedman2.html">sim_Friedman2</a></span><span class="op">(</span><span class="fl">200</span>, sd<span class="op">=</span><span class="fl">125</span><span class="op">)</span></span>
 <span><span class="va">testdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sim_Friedman2.html">sim_Friedman2</a></span><span class="op">(</span><span class="fl">1000</span>, sd<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span>
 <span><span class="va">fit.bark.d</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bark.html">bark</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">$</span><span class="va">x</span>, </span>
@@ -109,7 +110,7 @@
 <span><span class="co">#&gt; [1] "Starting BARK-sd for this regression problem"</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">-</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1516.574</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 1738.992</span></span></code></pre></div>
 <p>bark is similar to SVM, however it allows different kernel smoothing parameters for every dimension of the inputs <span class="math inline"><em>x</em></span> as well as selection of inputs by allowing the kernel smoothing parameters to be zero.</p>
 <p>The plot below shows posterior draws of the <span class="math inline"><em>λ</em></span> for the simulated data.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
