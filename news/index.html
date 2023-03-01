@@ -54,18 +54,18 @@
 <h2 class="page-header" data-toc-text="1.0.0" id="bark-100">bark 1.0.0<a class="anchor" aria-label="anchor" href="#bark-100"></a></h2>
 <div class="section level3">
 <h3 id="major-changes-1-0-0">Major Changes<a class="anchor" aria-label="anchor" href="#major-changes-1-0-0"></a></h3>
-<ul><li><p>changed running times of examples to address issue <a href="https://CRAN.R-project.org/package=bark" class="external-link uri">https://CRAN.R-project.org/package=bark</a> which led package to being archived in 2015</p></li>
+<ul><li><p>replace input arguments <code>y.train</code> and <code>x.train</code> to use model formula and dataframe as inputs.</p></li>
+<li><p>replaced the argument <code>type</code> with two logical variables: <code>selection</code> and <code>common_lambdas</code> that are more intuitive.</p></li>
+<li><p>changed running times of examples to address issue <a href="https://CRAN.R-project.org/package=bark" class="external-link uri">https://CRAN.R-project.org/package=bark</a> which led package to being archived in 2015</p></li>
 <li><p>added registration of native routines in foreign function calls and disabled symbol search in <code>src/bark-init.c</code> and updated the <code>NAMESPACE</code></p></li>
-<li><p>deprecated functions <code>sim.Circle</code>, <code>sim.Friedman1</code>, <code>sim.Friedman2</code>, <code>sim.Friedman3</code> and created new versions <code>sim_circle</code>, <code>sim_Friedman1</code>, <code>sim_Friedman2</code>, <code>sim_Friedman3</code> to avoid confusion with S3 methods</p></li>
 <li><p>replaced kernel calculation using <code>.C</code> with <code>.Call</code> to improve speed in <code>src/kernelCalculationCall.cpp</code> and <code>R/llike.R</code></p></li>
-<li><p>added unit test in <code>testthat</code></p></li>
+<li><p>added unit tests in <code>testthat</code> so that code coverage is reported with CI; code coverage badge added to README.</p></li>
 <li><p>converted all help files to use <code>roxygen</code> tags</p></li>
+<li><p>deprecated functions <code>sim.Circle</code>, <code>sim.Friedman1</code>, <code>sim.Friedman2</code>, <code>sim.Friedman3</code> and created new versions <code>sim_circle</code>, <code>sim_Friedman1</code>, <code>sim_Friedman2</code>, <code>sim_Friedman3</code> to avoid confusion with S3 methods</p></li>
 </ul></div>
 <div class="section level3">
-<h3 id="bugs-1-0-0">Bugs<a class="anchor" aria-label="anchor" href="#bugs-1-0-0"></a></h3>
-<p>To Do</p>
-<ul><li><p>fix <code>src/kernelCalculationCall.cpp</code> (<code>testthat/test-llike.R</code>)</p></li>
-<li><p>coerce inputs to correct type in <code>createDesign</code> in <code>R/llike.R</code> (<a href="https://github.com/merliseclyde/bark/issues/1" class="external-link">#1</a>)</p></li>
+<h3 id="bug-fixes-1-0-0">Bug Fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-0-0"></a></h3>
+<ul><li>Added type checks to <code>src/kernelCalculationCall.cpp</code> and coerce inputs to correct type (unit tests in <code>testthat/test-llike.R</code>) reported at GitHub Issue <a href="https://github.com/merliseclyde/bark/issues/1" class="external-link">#1</a></li>
 </ul></div>
 </div>
   </div>

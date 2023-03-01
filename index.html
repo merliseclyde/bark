@@ -103,9 +103,10 @@
 <span><span class="va">testdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sim_Friedman2.html">sim_Friedman2</a></span><span class="op">(</span><span class="fl">1000</span>, sd<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span>
 <span><span class="va">fit.bark.d</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bark.html">bark</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">.</span>,  </span>
 <span>                   data<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">)</span>, </span>
-<span>                   x.test <span class="op">=</span> <span class="va">testdata</span><span class="op">$</span><span class="va">x</span>, </span>
+<span>                   testdata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">testdata</span><span class="op">)</span>,</span>
 <span>                   classification<span class="op">=</span><span class="cn">FALSE</span>, </span>
-<span>                   type<span class="op">=</span><span class="st">"sd"</span>,</span>
+<span>                   selection <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                   common_lambdas <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                   printevery <span class="op">=</span> <span class="fl">10</span><span class="op">^</span><span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">-</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
