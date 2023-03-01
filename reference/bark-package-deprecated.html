@@ -50,7 +50,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Deprecated functions in package <span class="pkg">bark</span>.</h1>
-    <small class="dont-index">Source: <a href="https://github.com/merliseclyde/bark/blob/HEAD/R/bark-package-deprecated.R" class="external-link"><code>R/bark-package-deprecated.R</code></a>, <a href="https://github.com/merliseclyde/bark/blob/HEAD/R/depr_sim.Friedman1.R" class="external-link"><code>R/depr_sim.Friedman1.R</code></a>, <a href="https://github.com/merliseclyde/bark/blob/HEAD/R/depr_sim.Friedman2.R" class="external-link"><code>R/depr_sim.Friedman2.R</code></a>, and 2 more</small>
+    <small class="dont-index">Source: <a href="https://github.com/merliseclyde/bark/blob/HEAD/R/bark-package-deprecated.R" class="external-link"><code>R/bark-package-deprecated.R</code></a>, <a href="https://github.com/merliseclyde/bark/blob/HEAD/R/depr_bark.r" class="external-link"><code>R/depr_bark.r</code></a>, <a href="https://github.com/merliseclyde/bark/blob/HEAD/R/depr_sim.Friedman1.R" class="external-link"><code>R/depr_sim.Friedman1.R</code></a>, and 3 more</small>
     <div class="hidden name"><code>bark-package-deprecated.Rd</code></div>
     </div>
 
@@ -62,7 +62,24 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">sim.Friedman1</span><span class="op">(</span><span class="va">n</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bark_mat</span><span class="op">(</span></span>
+<span>  <span class="va">x.train</span>,</span>
+<span>  <span class="va">y.train</span>,</span>
+<span>  x.test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"se"</span>,</span>
+<span>  classification <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  keepevery <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  nburn <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  nkeep <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  printevery <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>  keeptrain <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  fixed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  tune <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>lstep <span class="op">=</span> <span class="fl">0.5</span>, frequL <span class="op">=</span> <span class="fl">0.2</span>, dpow <span class="op">=</span> <span class="fl">1</span>, upow <span class="op">=</span> <span class="fl">0</span>, varphistep <span class="op">=</span> <span class="fl">0.5</span>, phistep <span class="op">=</span></span>
+<span>    <span class="fl">1</span><span class="op">)</span>,</span>
+<span>  theta <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">sim.Friedman1</span><span class="op">(</span><span class="va">n</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">sim.Friedman2</span><span class="op">(</span><span class="va">n</span>, sd <span class="op">=</span> <span class="fl">125</span><span class="op">)</span></span>
 <span></span>
@@ -71,6 +88,10 @@
 <span><span class="fu">sim.Circle</span><span class="op">(</span><span class="va">n</span>, dim <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div id="bark-mat">
+    <h2><code>bark_mat</code></h2>
+    <p>Old version with matrix inputs used for testing</p>
+    </div>
     <div id="sim-friedman-">
     <h2><code>sim.Friedman1</code></h2>
     
@@ -98,6 +119,7 @@
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p>Other bark deprecated functions: 
+<code><a href="bark-deprecated.html">bark-deprecated</a></code>,
 <code><a href="sim.Circle-deprecated.html">sim.Circle-deprecated</a></code>,
 <code><a href="sim.Friedman1-deprecated.html">sim.Friedman1-deprecated</a></code>,
 <code><a href="sim.Friedman2-deprecated.html">sim.Friedman2-deprecated</a></code>,
