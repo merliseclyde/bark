@@ -101,13 +101,12 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span>
 <span><span class="va">traindata</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sim_Friedman2.html">sim_Friedman2</a></span><span class="op">(</span><span class="fl">200</span>, sd<span class="op">=</span><span class="fl">125</span><span class="op">)</span></span>
 <span><span class="va">testdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sim_Friedman2.html">sim_Friedman2</a></span><span class="op">(</span><span class="fl">1000</span>, sd<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span>
-<span><span class="va">fit.bark.d</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bark.html">bark</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">$</span><span class="va">x</span>, </span>
-<span>                   <span class="va">traindata</span><span class="op">$</span><span class="va">y</span>, </span>
-<span>                   <span class="va">testdata</span><span class="op">$</span><span class="va">x</span>, </span>
+<span><span class="va">fit.bark.d</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bark.html">bark</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">.</span>,  </span>
+<span>                   data<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">)</span>, </span>
+<span>                   x.test <span class="op">=</span> <span class="va">testdata</span><span class="op">$</span><span class="va">x</span>, </span>
 <span>                   classification<span class="op">=</span><span class="cn">FALSE</span>, </span>
 <span>                   type<span class="op">=</span><span class="st">"sd"</span>,</span>
 <span>                   printevery <span class="op">=</span> <span class="fl">10</span><span class="op">^</span><span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Starting BARK-sd for this regression problem"</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">-</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 1738.992</span></span></code></pre></div>
@@ -116,7 +115,7 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
-<p>The posterior distribution for <span class="math inline"><em>λ</em><sub>1</sub></span> and <span class="math inline"><em>λ</em><sub>4</sub></span> are concentrated at zero, which leads to <span class="math inline"><em>x</em><sub>1</sub></span> and <span class="math inline"><em>x</em><sub>2</sub></span> dropping from the mean function.</p>
+<p>The posterior distribution for <span class="math inline"><em>λ</em><sub>1</sub></span> and <span class="math inline"><em>λ</em><sub>4</sub></span> are concentrated near zero, which leads to <span class="math inline"><em>x</em><sub>1</sub></span> and <span class="math inline"><em>x</em><sub>2</sub></span> dropping from the mean function.</p>
 </div>
 </div>
   </div>
