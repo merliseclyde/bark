@@ -98,7 +98,8 @@ parameters.</p>
 <span>  <span class="va">subset</span>,</span>
 <span>  na.action <span class="op">=</span> <span class="va">na.omit</span>,</span>
 <span>  x.test <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>,</span>
-<span>  type <span class="op">=</span> <span class="st">"se"</span>,</span>
+<span>  selection <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  common_lambdas <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  classification <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  keepevery <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>  nburn <span class="op">=</span> <span class="fl">100</span>,</span>
@@ -140,9 +141,17 @@ contain NAs. The default is "na.omit".</p></dd>
 Should have same structure as x.train.</p></dd>
 
 
-<dt>type</dt>
-<dd><p>BARK type, <em>e</em>, <em>d</em>, <em>se</em>, or <em>sd</em>, default
-choice is <em>se</em>.<br><em>e</em>: BARK with equal weights.<br><em>d</em>: BARK with different weights.<br><em>se</em>: BARK with selection and equal weights.<br><em>sd</em>: BARK with selection and different weights.<br></p></dd>
+<dt>selection</dt>
+<dd><p>Logical variable indicating whether variable 
+dependent kernel parameters \(\lambda\) may be set to zero in the MCMC; 
+default is TRUE. <br></p></dd>
+
+
+<dt>common_lambdas</dt>
+<dd><p>Logical variable indicating whether
+kernel parameters \(\lambda\) should be predictor specific or common across
+predictors;  default is TRUE.   Note if  <em>common_lambdas = TRUE</em> and 
+<em>selection = TRUE</em> this applies just to the non-zero \(lambda_j\). <br></p></dd>
 
 
 <dt>classification</dt>
