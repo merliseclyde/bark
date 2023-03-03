@@ -54,18 +54,22 @@
 <h2 class="page-header" data-toc-text="1.0.0" id="bark-100">bark 1.0.0<a class="anchor" aria-label="anchor" href="#bark-100"></a></h2>
 <div class="section level3">
 <h3 id="major-changes-1-0-0">Major Changes<a class="anchor" aria-label="anchor" href="#major-changes-1-0-0"></a></h3>
-<ul><li><p>replace input arguments <code>y.train</code> and <code>x.train</code> to use model formula and dataframe as inputs.</p></li>
+<ul><li><p>output of <code>bark</code> is now a <code>bark</code> object which will allow S3 methods</p></li>
+<li><p>replace input arguments <code>y.train</code> and <code>x.train</code> to use model formula and dataframe as inputs.</p></li>
 <li><p>replaced the argument <code>type</code> with two logical variables: <code>selection</code> and <code>common_lambdas</code> that are more intuitive.</p></li>
 <li><p>changed running times of examples to address issue <a href="https://CRAN.R-project.org/package=bark" class="external-link uri">https://CRAN.R-project.org/package=bark</a> which led package to being archived in 2015</p></li>
 <li><p>added registration of native routines in foreign function calls and disabled symbol search in <code>src/bark-init.c</code> and updated the <code>NAMESPACE</code></p></li>
 <li><p>replaced kernel calculation using <code>.C</code> with <code>.Call</code> to improve speed in <code>src/kernelCalculationCall.cpp</code> and <code>R/llike.R</code></p></li>
-<li><p>added unit tests in <code>testthat</code> so that code coverage is reported with CI; code coverage badge added to README.</p></li>
+<li><p>added unit tests in <code>testthat</code> so that code coverage is reported with CI; code coverage badge added to README. Unit tests now cover over 95% of the code.</p></li>
+<li><p>added GitHub actions for CI and checks on Windows, MacOSX, and Ubuntu and added passing Badge to README.md in GitHub repo.</p></li>
 <li><p>converted all help files to use <code>roxygen</code> tags</p></li>
 <li><p>deprecated functions <code>sim.Circle</code>, <code>sim.Friedman1</code>, <code>sim.Friedman2</code>, <code>sim.Friedman3</code> and created new versions <code>sim_circle</code>, <code>sim_Friedman1</code>, <code>sim_Friedman2</code>, <code>sim_Friedman3</code> to avoid confusion with S3 methods</p></li>
+<li><p>updated CODE_OF_CONDUCT.md, SECURITY.md, CONTRIBUTING.md on GitHub repo and other updates for OpenSSF BestPractices Badge (added to README.md)</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="bug-fixes-1-0-0">Bug Fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-0-0"></a></h3>
-<ul><li>Added type checks to <code>src/kernelCalculationCall.cpp</code> and coerce inputs to correct type (unit tests in <code>testthat/test-llike.R</code>) reported at GitHub Issue <a href="https://github.com/merliseclyde/bark/issues/1" class="external-link">#1</a></li>
+<ul><li><p>GitHub Issue <a href="https://github.com/merliseclyde/bark/issues/1" class="external-link">#1</a> Added type checks to <code>src/kernelCalculationCall.cpp</code> and coerce inputs to correct type (unit tests in <code>testthat/test-llike.R</code>) reported at</p></li>
+<li><p>GitHub Issue <a href="https://github.com/merliseclyde/bark/issues/3" class="external-link">#3</a> Addressed error in when <code>p = 1</code> where subseting resulted in output being a vector due to drop in dimension. Added unit test in <code>testthat/test-bark.R</code></p></li>
 </ul></div>
 </div>
   </div>
