@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>http://merliseclyde.github.io/bark/404.html</loc>
   </url>
   <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
+    <loc>http://merliseclyde.github.io/bark/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>/CONTRIBUTING.html</loc>
+    <loc>http://merliseclyde.github.io/bark/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>http://merliseclyde.github.io/bark/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/SECURITY.html</loc>
+    <loc>http://merliseclyde.github.io/bark/SECURITY.html</loc>
   </url>
   <url>
-    <loc>/articles/bark.html</loc>
+    <loc>http://merliseclyde.github.io/bark/articles/bark.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>http://merliseclyde.github.io/bark/articles/index.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>http://merliseclyde.github.io/bark/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>http://merliseclyde.github.io/bark/index.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>http://merliseclyde.github.io/bark/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/bark-deprecated.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/bark-deprecated.html</loc>
   </url>
   <url>
-    <loc>/reference/bark-package-deprecated.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/bark-package-deprecated.html</loc>
   </url>
   <url>
-    <loc>/reference/bark-package.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/bark-package.html</loc>
   </url>
   <url>
-    <loc>/reference/bark.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/bark.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/sim.Circle-deprecated.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim.Circle-deprecated.html</loc>
   </url>
   <url>
-    <loc>/reference/sim.Friedman1-deprecated.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim.Friedman1-deprecated.html</loc>
   </url>
   <url>
-    <loc>/reference/sim.Friedman2-deprecated.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim.Friedman2-deprecated.html</loc>
   </url>
   <url>
-    <loc>/reference/sim.Friedman3-deprecated.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim.Friedman3-deprecated.html</loc>
   </url>
   <url>
-    <loc>/reference/sim_Friedman1.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim_Friedman1.html</loc>
   </url>
   <url>
-    <loc>/reference/sim_Friedman2.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim_Friedman2.html</loc>
   </url>
   <url>
-    <loc>/reference/sim_Friedman3.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim_Friedman3.html</loc>
   </url>
   <url>
-    <loc>/reference/sim_circle.html</loc>
+    <loc>http://merliseclyde.github.io/bark/reference/sim_circle.html</loc>
   </url>
 </urlset>
