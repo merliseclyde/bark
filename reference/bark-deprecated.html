@@ -288,33 +288,7 @@ Duke University. PhD dissertation, page 58.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">##Simulate regression example</span></span></span>
-<span class="r-in"><span><span class="co"># Friedman 2 data set, 200 noisy training, 1000 noise free testing</span></span></span>
-<span class="r-in"><span><span class="co"># Out of sample MSE in SVM (default RBF): 6500 (sd. 1600)</span></span></span>
-<span class="r-in"><span><span class="co"># Out of sample MSE in BART (default):    5300 (sd. 1000)</span></span></span>
-<span class="r-in"><span><span class="va">traindata</span> <span class="op">&lt;-</span> <span class="fu"><a href="sim_Friedman2.html">sim_Friedman2</a></span><span class="op">(</span><span class="fl">200</span>, sd<span class="op">=</span><span class="fl">125</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">testdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="sim_Friedman2.html">sim_Friedman2</a></span><span class="op">(</span><span class="fl">1000</span>, sd<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">fit.bark.d</span> <span class="op">&lt;-</span> <span class="fu"><a href="bark-package-deprecated.html">bark_mat</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">$</span><span class="va">x</span>, <span class="va">traindata</span><span class="op">$</span><span class="va">y</span>, <span class="va">testdata</span><span class="op">$</span><span class="va">x</span>,</span></span>
-<span class="r-in"><span>                  nburn<span class="op">=</span><span class="fl">10</span>, nkeep<span class="op">=</span><span class="fl">100</span>, keepevery<span class="op">=</span><span class="fl">10</span>,</span></span>
-<span class="r-in"><span>                  classification<span class="op">=</span><span class="cn">FALSE</span>, type<span class="op">=</span><span class="st">"d"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Starting BARK-d for this regression problem"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "posterior mcmc iteration 1000, J=9, max(nj)=1"</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="bark-deprecated-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">-</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5143.901</span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span> <span class="co">##Simulate classification example</span></span></span>
-<span class="r-in"><span> <span class="co"># Circle 5 with 2 signals and three noisy dimensions</span></span></span>
-<span class="r-in"><span> <span class="co"># Out of sample erorr rate in SVM (default RBF): 0.110 (sd. 0.02)</span></span></span>
-<span class="r-in"><span> <span class="co"># Out of sample error rate in BART (default):    0.065 (sd. 0.02)</span></span></span>
-<span class="r-in"><span> <span class="va">traindata</span> <span class="op">&lt;-</span> <span class="fu">sim_Circle</span><span class="op">(</span><span class="fl">200</span>, dim<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="va">testdata</span> <span class="op">&lt;-</span> <span class="fu">sim_Circle</span><span class="op">(</span><span class="fl">1000</span>, dim<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="va">fit.bark.se</span> <span class="op">&lt;-</span> <span class="fu"><a href="bark-package-deprecated.html">bark_mat</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">$</span><span class="va">x</span>, <span class="va">traindata</span><span class="op">$</span><span class="va">y</span>, <span class="va">testdata</span><span class="op">$</span><span class="va">x</span>, classification<span class="op">=</span><span class="cn">TRUE</span>, type<span class="op">=</span><span class="st">"se"</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">fit.bark.se</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.se</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span><span class="op">!=</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
-</code></pre></div>
+    
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
