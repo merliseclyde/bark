@@ -241,7 +241,7 @@ use defaults if nothing is given.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p><code>bark</code> returns a list, including:</p>
+<p><code>bark</code> returns an object of class `bark` with a list, including:</p>
 <dl><dt>call</dt>
 <dd><p>the matched call</p></dd>
 
@@ -292,7 +292,7 @@ recording the  number of kernels at each training sample</p></dd>
 
 <dt>yhat.test</dt>
 <dd><p>Same as yhat.train but now the x's
-are the rows of the test data</p></dd>
+are the rows of the test data;  NULL if testdata are not provided</p></dd>
 
 <dt>yhat.train.mean</dt>
 <dd><p>train data fits = row mean of yhat.train</p></dd>
@@ -306,7 +306,7 @@ are the rows of the test data</p></dd>
     <p>BARK is implemented using a Bayesian MCMC method.
 At each MCMC interaction, we produce a draw from the joint posterior
 distribution, i.e. a full configuration of regression coefficients,
-kernel locations and kernel parameters etc.</p>
+kernel locations and kernel parameters.</p>
 <p>Thus, unlike a lot of other modelling methods in R,
 we do not produce a single model object
 from which fits and summaries may be extracted.
@@ -348,22 +348,24 @@ Duke University. PhD dissertation, page 58.</p>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="bark-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">-</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 12741.7</span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 14193.87</span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span> <span class="co">##Simulate classification example</span></span></span>
 <span class="r-in"><span> <span class="co"># Circle 5 with 2 signals and three noisy dimensions</span></span></span>
 <span class="r-in"><span> <span class="co"># Out of sample erorr rate in SVM (default RBF): 0.110 (sd. 0.02)</span></span></span>
 <span class="r-in"><span> <span class="co"># Out of sample error rate in BART (default):    0.065 (sd. 0.02)</span></span></span>
-<span class="r-in"><span> <span class="va">traindata</span> <span class="op">&lt;-</span> <span class="fu">sim_Circle</span><span class="op">(</span><span class="fl">200</span>, dim<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="va">testdata</span> <span class="op">&lt;-</span> <span class="fu">sim_Circle</span><span class="op">(</span><span class="fl">1000</span>, dim<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">traindata</span> <span class="op">&lt;-</span> <span class="fu"><a href="sim_circle.html">sim_circle</a></span><span class="op">(</span><span class="fl">200</span>, dim<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">testdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="sim_circle.html">sim_circle</a></span><span class="op">(</span><span class="fl">1000</span>, dim<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">fit.bark.se</span> <span class="op">&lt;-</span> <span class="fu">bark</span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">.</span>, </span></span>
 <span class="r-in"><span>                     data<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">)</span>, </span></span>
 <span class="r-in"><span>                     testdata<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">testdata</span><span class="op">)</span>, </span></span>
 <span class="r-in"><span>                     classification<span class="op">=</span><span class="cn">TRUE</span>,</span></span>
 <span class="r-in"><span>                     nburn<span class="op">=</span><span class="fl">100</span>, nkeep<span class="op">=</span><span class="fl">200</span>, <span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">fit.bark.se</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="bark-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.se</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span><span class="op">!=</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.008</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
