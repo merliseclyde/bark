@@ -5,67 +5,41 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="bark">
 <title>Nonparametric Regression with Bayesian Additive Regression Kernels • bark</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Nonparametric Regression with Bayesian Additive Regression Kernels">
-<meta property="og:description" content="bark">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Nonparametric Regression with Bayesian Additive Regression Kernels">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
-    
 
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary" data-bs-theme="dark"><div class="container">
-    
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
+
     <a class="navbar-brand me-2" href="../index.html">bark</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.6</small>
 
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="active nav-item">
-  <a class="nav-link" href="../articles/index.html">Vignettes</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Functions</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../news/index.html">News</a>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Vignettes</a></li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Functions</a></li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">News</a></li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav">
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://twitter.com/merliseclyde">
-    <span class="fa fa-twitter"></span>
-     
-  </a>
-</li>
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/merliseclyde/BAS">
-    <span class="fa fa-github"></span>
-     
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><a class="external-link nav-link" href="https://twitter.com/merliseclyde"><span class="fa fa-twitter"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/merliseclyde/bark"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
-    
+
   </div>
 </nav><div class="container template-article">
 
@@ -74,13 +48,14 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>Nonparametric Regression with Bayesian Additive Regression Kernels</h1>
+
+      <h1>Nonparametric Regression with Bayesian Additive Regression Kernels</h1>
                         <h4 data-toc-skip class="author">Merlise A
 Clyde</h4>
             
-            <h4 data-toc-skip class="date">2024-06-27</h4>
+            <h4 data-toc-skip class="date">2024-10-05</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/merliseclyde/bark/blob/HEAD/vignettes/bark.Rmd" class="external-link"><code>vignettes/bark.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/merliseclyde/bark/blob/master/vignettes/bark.Rmd" class="external-link"><code>vignettes/bark.Rmd</code></a></small>
       <div class="d-none name"><code>bark.Rmd</code></div>
     </div>
 
@@ -89,15 +64,21 @@ Clyde</h4>
 <p>Bayesian Additive Regression Kernel (BARK) models are a flexible
 Bayesian nonparametric model for regression and classification problems
 where the unknown mean function is represented as a weighted sum of
-multivariate Gaussian kernel functions, <span class="math display">\[\begin{equation}
-f(\mathbf{x}) = \sum_j \beta_j  \prod_d \exp( \lambda_d (x_d -
-\chi_{jd})^2)
-\end{equation}\]</span> that allows nonlinearities, interactions and
-feature selection using Levy random fields to construct a prior on the
-unknown function. Each kernel is centered at location parameters <span class="math inline">\(\chi_{jd}\)</span> with precision parameters <span class="math inline">\(\lambda_d\)</span> - these precision parameters
-capture the importance of each of the <span class="math inline">\(d\)</span> dimensional predictor variables and by
-setting a <span class="math inline">\(\lambda_d\)</span> to zero may
-remove important variables that are not important.</p>
+multivariate Gaussian kernel functions,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>β</mi><mi>j</mi></msub><munder><mo>∏</mo><mi>d</mi></munder><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>λ</mi><mi>d</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>d</mi></msub><mo>−</mo><msub><mi>χ</mi><mrow><mi>j</mi><mi>d</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{equation}
+f(\mathbf{x}) = \sum_j \beta_j  \prod_d \exp( \lambda_d (x_d - \chi_{jd})^2)
+\end{equation}</annotation></semantics></math> that allows
+nonlinearities, interactions and feature selection using Levy random
+fields to construct a prior on the unknown function. Each kernel is
+centered at location parameters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>χ</mi><mrow><mi>j</mi><mi>d</mi></mrow></msub><annotation encoding="application/x-tex">\chi_{jd}</annotation></semantics></math>
+with precision parameters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>λ</mi><mi>d</mi></msub><annotation encoding="application/x-tex">\lambda_d</annotation></semantics></math>
+- these precision parameters capture the importance of each of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+dimensional predictor variables and by setting a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>λ</mi><mi>d</mi></msub><annotation encoding="application/x-tex">\lambda_d</annotation></semantics></math>
+to zero may remove important variables that are not important.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -146,20 +127,24 @@ from Friedman</p>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">fit.bark.sd</span><span class="op">$</span><span class="va">yhat.test.mean</span><span class="op">-</span><span class="va">testdata</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 1355.865</span></span></code></pre></div>
 <p>bark is similar to SVM, however it allows different kernel smoothing
-parameters for every dimension of the inputs <span class="math inline">\(x\)</span> using the option
-<code>common_lambdas = FALSE</code> as well as selection of inputs by
-allowing the kernel smoothing parameters to be zero using the option
-<code>selection = TRUE</code>.</p>
-<p>The plot below shows posterior draws of the <span class="math inline">\(\lambda\)</span> for the simulated data under the
-two scenarios allowing different <span class="math inline">\(\lambda_d\)</span> by dimension with and without
-selection.</p>
+parameters for every dimension of the inputs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+using the option <code>common_lambdas = FALSE</code> as well as
+selection of inputs by allowing the kernel smoothing parameters to be
+zero using the option <code>selection = TRUE</code>.</p>
+<p>The plot below shows posterior draws of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+for the simulated data under the two scenarios allowing different
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>λ</mi><mi>d</mi></msub><annotation encoding="application/x-tex">\lambda_d</annotation></semantics></math>
+by dimension with and without selection.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">fit.bark.d</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="bark_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">fit.bark.sd</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="bark_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
-<p>While the plots of the <span class="math inline">\(\lambda_j\)</span>
+<p>While the plots of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>λ</mi><mi>j</mi></msub><annotation encoding="application/x-tex">\lambda_j</annotation></semantics></math>
 without selection (top) and with selection (bottom) are similar, the
 additional shrinkage of values towards zero has lead to an improvement
 in RMSE.</p>
@@ -266,7 +251,9 @@ input variables.</p>
 <span><span class="co">#</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">circle2.bark</span><span class="op">$</span><span class="va">yhat.test.mean</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">!=</span> <span class="va">circle2</span><span class="op">[</span><span class="op">-</span><span class="va">train</span>, <span class="st">"y"</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.024</span></span></code></pre></div>
-<p>The plot below shows posterior draws of the <span class="math inline">\(\lambda\)</span> for the simulated data.</p>
+<p>The plot below shows posterior draws of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+for the simulated data.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html" class="external-link">boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">circle2.bark</span><span class="op">$</span><span class="va">theta.lambda</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="bark_files/figure-html/unnamed-chunk-10-1.png" width="700">
@@ -326,7 +313,7 @@ input variables.</p>
 <span><span class="co">#&gt; [1] 0.056</span></span></code></pre></div>
 </div>
 </div>
-  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
 
@@ -337,15 +324,15 @@ input variables.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer>
 </div>
 
-  
 
-  
+
+
 
   </body>
 </html>
