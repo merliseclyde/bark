@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/merliseclyde/bark/workflows/R-CMD-check/badge.svg)](https://github.com/merliseclyde/bark/actions)
-[![codecov](https://codecov.io/gh/merliseclyde/bark/graph/badge.svg?token=iPCcWEu34R)](https://app.codecov.io/gh/merliseclyde/bark)
+[![codecov](https://codecov.io/github/merliseclyde/bark/graph/badge.svg?token=M9zXaLUqHe)](https://codecov.io/github/merliseclyde/bark)
 [![OpenSSF Best
 Practices](https://bestpractices.coreinfrastructure.org/projects/7096/badge)](https://bestpractices.coreinfrastructure.org/projects/7096)
 [![CRAN
